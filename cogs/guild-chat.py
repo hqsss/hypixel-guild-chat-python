@@ -56,6 +56,8 @@ class GuildChat(commands.Cog):
         else:
             await message.channel.send(":x: **ERROR**: That message is too long!")
         await message.delete()
+        if '!sudo' in message.content
+            await message.delete()
 
     @commands.command()
     @commands.is_owner()
