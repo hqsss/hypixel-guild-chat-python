@@ -10,7 +10,7 @@ EMOJIS = {
     'JOIN': '📥',  # When a member joins Hypixel
     'LEAVE': '📤'  # When a member leaves Hypixel
 }
-# List of Owner IDs (to use commands like sumo)
+# List of Owner IDs (to use commands like sumo aaaaaaaaaaaaa)
 OWNER_IDS = [635097068741853204]
 
 
