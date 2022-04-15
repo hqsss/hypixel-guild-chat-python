@@ -45,18 +45,19 @@ class GuildChat(commands.Cog):
     async def on_message(self, message) -> None:
         if message.author.bot or message.channel.id != GUILD_CHAT_CHANNEL:
             return
-        if len(message.clean_content) <= 150:
-            text = message.clean_content
-            displayname = message.author.name
-            to_send = insert_invis(f"{displayname}: {re.sub('ez', 'e⛶z', text, flags=re.IGNORECASE)}")
-            self.append_command(f"/gc {to_send}")
-            text = discord.utils.escape_markdown(message.clean_content)
-            displayname = discord.utils.escape_markdown(displayname)
-            self.lastmsg = await message.channel.send(f"{EMOJIS['DISCORD']} **{displayname}**: {text}")
-        else:
-            await message.channel.send(":x: **ERROR**: That message is too long!")
-        await message.delete()
         if '!sudo' in message.content
+            self.append_command(f"/gc")
+        else:
+            if len(message.clean_content) <= 150:
+                text = message.clean_content
+                displayname = messageauthor.name
+                to_send = insert_invis(f"{displayname}: {re.sub('ez', 'e⛶z', text, flags=re.IGNORECASE)}")
+                self.append_command(f"/gc {to_send}")
+                text = discord.utils.escape_markdown(message.clean_content)
+                displayname = discord.utils.escape_markdown(displayname)
+                self.lastmsg = await message.channel.send(f"{EMOJIS['DISCORD']} **{displayname}**: {text}")
+            else:
+                await message.channel.send(":x: **ERROR**: That message is too long!")
             await message.delete()
 
     @commands.command()
