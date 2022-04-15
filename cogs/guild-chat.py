@@ -45,9 +45,6 @@ class GuildChat(commands.Cog):
     async def on_message(self, message) -> None:
         if message.author.bot or message.channel.id != GUILD_CHAT_CHANNEL:
             return
-        if '!sudo' in message.content
-            self.append_command(f"/gc")
-        else:
             if len(message.clean_content) <= 150:
                 text = message.clean_content
                 displayname = messageauthor.name
